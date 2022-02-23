@@ -6,5 +6,7 @@ Includes:
 
  - Cloudflare Zone
  - Cloudflare SSL Encryption
+ - Cloudflare for Teams
+ - Gmail
  - AWS SES
  - AWS DynamoDB
