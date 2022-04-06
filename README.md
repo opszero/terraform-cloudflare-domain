@@ -1,6 +1,6 @@
-# opsZero Domain
+# terraform-cloudflare-domain
 
-Cloudflare Setup for a Domain
+Cloudflare Setup for a new SaaS Startup
 
 Includes:
 
@@ -9,4 +9,3 @@ Includes:
  - Cloudflare for Teams
  - Gmail
  - AWS SES
- - AWS DynamoDB
