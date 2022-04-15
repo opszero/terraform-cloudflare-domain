@@ -9,3 +9,4 @@ Includes:
  - Cloudflare for Teams
  - Gmail
  - AWS SES
+ - AWS DynamoDB
