@@ -10,3 +10,16 @@ Includes:
  - Gmail
  - AWS SES
  - AWS DynamoDB
+
+ # Deployment
+
+```sh
+terraform init
+terraform plan
+terraform apply -auto-approve
+```
+# Teardown
+
+```sh
+terraform destroy -auto-approve
+```
