@@ -36,7 +36,7 @@ terraform destroy -auto-approve
 |------|-------------|------|---------|:--------:|
 | <a name="input_access"></a> [access](#input\_access) | List of access applications | `list` | `[]` | no |
 | <a name="input_domain"></a> [domain](#input\_domain) | domain for the webapp | `any` | n/a | yes |
-| <a name="input_dynamodb"></a> [dynamodb](#input\_dynamodb) | Specify whether the Dynamodb is enabled | `bool` | `false` | no |
+| <a name="input_dynamodb"></a> [dynamodb](#input\_dynamodb) | Specify whether DynamoDB is enabled | `bool` | `false` | no |
 | <a name="input_parking"></a> [parking](#input\_parking) | n/a | `bool` | `false` | no |
 | <a name="input_records"></a> [records](#input\_records) | List of DNS records | `list` | `[]` | no |
 ## Resources
