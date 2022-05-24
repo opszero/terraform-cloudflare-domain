@@ -13,7 +13,7 @@ variable "parking" {
 
 variable "dynamodb" {
   default     = false
-  description = "Specify whether the Dynamodb is enabled"
+  description = "Specify whether DynamoDB is enabled"
 }
 
 variable "access" {
