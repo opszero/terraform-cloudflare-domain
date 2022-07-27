@@ -1,5 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
-# Edge (Cloudflare)
+# terraform-cloudflare-domain
 
 Cloudflare Setup for a new SaaS Startup
 
