@@ -1,4 +1,4 @@
-# terraform-cloudflare-domain
+# Edge (Cloudflare)
 
 Cloudflare Setup for a new SaaS Startup
 
