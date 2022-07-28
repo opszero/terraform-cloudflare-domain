@@ -7,7 +7,7 @@ Includes:
  - Cloudflare Zone
  - Cloudflare SSL Encryption
  - Cloudflare for Teams
- - Gmail
+ - Gmail MX Records
  - AWS SES
 
 ## Deployment
