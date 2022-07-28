@@ -1,19 +1,4 @@
 locals {
-  records = [for r in concat([
-    (length([for record in var.records : record if record.name == "@"]) > 0 ? null : {
-      name    = "@"
-      value   = "ventures-1901699231.us-west-2.elb.amazonaws.com"
-      proxied = true
-      type    = "CNAME"
-    }),
-    (length([for record in var.records : record if record.name == "www"]) > 0 ? null : {
-      name    = "www"
-      value   = "ventures-1901699231.us-west-2.elb.amazonaws.com"
-      proxied = true
-      type    = "CNAME"
-    })
-  ], var.records) : r if r != null]
-
   mx_server_domains = [
     "aspmx.l.google.com",
     "alt1.aspmx.l.google.com",
@@ -54,13 +39,13 @@ resource "cloudflare_record" "dkim" {
 }
 
 resource "cloudflare_record" "records" {
-  count = length(local.records)
+  count = length(var.records)
 
   zone_id = cloudflare_zone.site.id
-  name    = local.records[count.index].name
-  value   = local.records[count.index].value
-  type    = local.records[count.index].type
-  proxied = local.records[count.index].proxied
+  name    = var.records[count.index].name
+  value   = var.records[count.index].value
+  type    = var.records[count.index].type
+  proxied = var.records[count.index].proxied
   ttl     = 1
 }
 
