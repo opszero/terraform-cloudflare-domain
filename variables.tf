@@ -3,7 +3,8 @@ variable "domain" {
 }
 
 variable "records" {
-  default = []
+  default     = []
+  description = "List of DNS records"
 }
 
 variable "parking" {
@@ -11,9 +12,11 @@ variable "parking" {
 }
 
 variable "dynamodb" {
-  default = false
+  default     = false
+  description = "Specify whether DynamoDB is enabled"
 }
 
 variable "access" {
-  default = []
+  default     = []
+  description = "List of access applications"
 }
