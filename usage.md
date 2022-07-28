@@ -9,16 +9,16 @@ Includes:
  - Cloudflare for Teams
  - Gmail
  - AWS SES
- - AWS DynamoDB
 
- # Deployment
+## Deployment
 
 ```sh
 terraform init
 terraform plan
 terraform apply -auto-approve
 ```
-# Teardown
+
+## Teardown
 
 ```sh
 terraform destroy -auto-approve
