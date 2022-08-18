@@ -1,5 +1,9 @@
 name: Generate terraform docs
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   docs:
@@ -15,7 +19,7 @@ jobs:
         working-dir: .
         config-file: .terraform-docs.yml
         output-file: README.md
-        output-method: inject
+        output-method: replace
         indention: 3
         git-push: true
         git-commit-message: "terraform-docs: automated action"

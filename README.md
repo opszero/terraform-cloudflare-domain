@@ -11,6 +11,33 @@ Includes:
  - Gmail MX Records
  - AWS SES
 
+## Usage
+
+```bash
+locals {
+  subdomains = [
+    {
+      name    = "@"
+      value   = "longtld.elb.us-west-2.amazonaws.com"
+      type    = "CNAME"
+      proxied = true
+    },
+    {
+      name    = "app"
+      value   = "longtlkd.elb.us-west-2.amazonaws.com"
+      type    = "CNAME"
+      proxied = true
+    }
+  ]
+}
+
+module "parking" {
+  source = "github.com/opszero/terraform-cloudflare-edge"
+  domain = "example.com"
+  records = local.subdomains
+}
+```
+
 ## Deployment
 
 ```sh
