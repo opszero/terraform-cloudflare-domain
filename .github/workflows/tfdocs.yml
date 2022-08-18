@@ -15,7 +15,7 @@ jobs:
         working-dir: .
         config-file: .terraform-docs.yml
         output-file: README.md
-        output-method: inject
+        output-method: Replace
         indention: 3
         git-push: true
         git-commit-message: "terraform-docs: automated action"
