@@ -1,5 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
-# Edge (Cloudflare)
+# Domain (Cloudflare)
 
 Cloudflare Setup for a new SaaS Startup
 
