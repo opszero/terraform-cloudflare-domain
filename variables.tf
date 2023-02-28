@@ -13,5 +13,5 @@ variable "access" {
 }
 
 variable "account_id" {
-  description = "Account ID to manage the zone resource in"
+  description = "Cloudflare account id"
 }
