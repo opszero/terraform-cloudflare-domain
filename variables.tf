@@ -11,3 +11,7 @@ variable "access" {
   default     = []
   description = "List of access applications"
 }
+
+variable "account_id" {
+  description = "Cloudflare account id"
+}
