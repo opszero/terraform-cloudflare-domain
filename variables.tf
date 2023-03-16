@@ -22,6 +22,11 @@ variable "google_email_enabled" {
   description = "Enable Google MX Records"
 }
 
+variable "aws_ses_enabled" {
+  default     = true
+  description = "Create AWS SES resources"
+}
+
 variable "account_id" {
   description = "Cloudflare account id"
 }

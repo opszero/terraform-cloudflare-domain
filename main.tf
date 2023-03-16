@@ -14,10 +14,12 @@ resource "cloudflare_zone" "site" {
 }
 
 resource "aws_ses_domain_identity" "ses" {
+  count  = var.aws_ses_enabled ? 1 : 0
   domain = var.domain
 }
 
 resource "cloudflare_record" "ses" {
+  count   = var.aws_ses_enabled ? 1 : 0
   zone_id = cloudflare_zone.site.id
   name    = "_amazonses"
   value   = aws_ses_domain_identity.ses.verification_token
@@ -27,11 +29,12 @@ resource "cloudflare_record" "ses" {
 }
 
 resource "aws_ses_domain_dkim" "dkim" {
+  count  = var.aws_ses_enabled ? 1 : 0
   domain = aws_ses_domain_identity.ses.domain
 }
 
 resource "cloudflare_record" "dkim" {
-  count   = 3
+  count   = var.aws_ses_enabled ? 3 : 0
   zone_id = cloudflare_zone.site.id
   name    = "${element(aws_ses_domain_dkim.dkim.dkim_tokens, count.index)}._domainkey.${var.domain}"
   type    = "CNAME"
