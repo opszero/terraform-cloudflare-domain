@@ -9,7 +9,8 @@ locals {
 }
 
 resource "cloudflare_zone" "site" {
-  zone = var.domain
+  zone       = var.domain
+  account_id = var.account_id
 }
 
 resource "aws_ses_domain_identity" "ses" {

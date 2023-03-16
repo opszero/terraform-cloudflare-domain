@@ -21,3 +21,7 @@ variable "google_email_enabled" {
   default     = true
   description = "Enable Google MX Records"
 }
+
+variable "account_id" {
+  description = "Cloudflare account id"
+}
