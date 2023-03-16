@@ -73,7 +73,9 @@ terraform destroy -auto-approve
 | <a name="input_access"></a> [access](#input\_access) | List of access applications | `list` | `[]` | no |
 | <a name="input_account_id"></a> [account\_id](#input\_account\_id) | Cloudflare account id | `any` | n/a | yes |
 | <a name="input_domain"></a> [domain](#input\_domain) | domain for the webapp | `any` | n/a | yes |
+| <a name="input_google_email_enabled"></a> [google\_email\_enabled](#input\_google\_email\_enabled) | Enable Google MX Records | `bool` | `true` | no |
 | <a name="input_records"></a> [records](#input\_records) | List of DNS records | `list` | `[]` | no |
+| <a name="input_ssl_forced"></a> [ssl\_forced](#input\_ssl\_forced) | Force SSL on Domains | `bool` | `true` | no |
 ## Resources
 
 | Name | Type |
