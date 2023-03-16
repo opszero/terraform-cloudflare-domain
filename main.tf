@@ -22,7 +22,7 @@ resource "cloudflare_record" "ses" {
   count   = var.aws_ses_enabled ? 1 : 0
   zone_id = cloudflare_zone.site.id
   name    = "_amazonses"
-  value   = aws_ses_domain_identity.ses.verification_token
+  value   = aws_ses_domain_identity.ses[0].verification_token
   type    = "TXT"
   ttl     = 600
   proxied = false
