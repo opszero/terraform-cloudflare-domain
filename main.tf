@@ -36,10 +36,10 @@ resource "aws_ses_domain_dkim" "dkim" {
 resource "cloudflare_record" "dkim" {
   count   = var.aws_ses_enabled ? 3 : 0
   zone_id = cloudflare_zone.site.id
-  name    = "${element(aws_ses_domain_dkim.dkim.dkim_tokens, count.index)}._domainkey.${var.domain}"
+  name    = "${element(aws_ses_domain_dkim.dkim[0].dkim_tokens, count.index)}._domainkey.${var.domain}"
   type    = "CNAME"
   ttl     = "600"
-  value   = "${element(aws_ses_domain_dkim.dkim.dkim_tokens, count.index)}.dkim.amazonses.com"
+  value   = "${element(aws_ses_domain_dkim.dkim[0].dkim_tokens, count.index)}.dkim.amazonses.com"
 }
 
 resource "cloudflare_record" "records" {
