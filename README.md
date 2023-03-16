@@ -34,6 +34,7 @@ locals {
 module "parking" {
   source = "github.com/opszero/terraform-cloudflare-edge"
   domain = "example.com"
+  account_id = "cloudflareaccountid"
   records = local.subdomains
 }
 ```
