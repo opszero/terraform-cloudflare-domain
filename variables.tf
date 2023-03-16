@@ -23,7 +23,7 @@ variable "google_email_enabled" {
 }
 
 variable "aws_ses_enabled" {
-  default     = true
+  default     = false
   description = "Create AWS SES resources"
 }
 
