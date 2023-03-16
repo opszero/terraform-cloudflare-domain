@@ -50,6 +50,8 @@ resource "cloudflare_record" "records" {
 }
 
 resource "cloudflare_page_rule" "ssl" {
+  count = var.ssl_forced ? 1 : 0
+
   zone_id  = cloudflare_zone.site.id
   target   = "*${var.domain}/*"
   priority = 1
@@ -62,7 +64,7 @@ resource "cloudflare_page_rule" "ssl" {
 }
 
 resource "cloudflare_record" "mx" {
-  count = length(local.mx_server_domains)
+  count = var.google_email_enabled ? length(local.mx_server_domains) : 0
 
   zone_id  = cloudflare_zone.site.id
   name     = "@"
@@ -73,6 +75,7 @@ resource "cloudflare_record" "mx" {
 }
 
 resource "cloudflare_record" "spf" {
+  count   = var.google_email_enabled ? 1 : 0
   zone_id = cloudflare_zone.site.id
   name    = "@"
   type    = "TXT"

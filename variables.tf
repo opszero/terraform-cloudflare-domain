@@ -11,3 +11,13 @@ variable "access" {
   default     = []
   description = "List of access applications"
 }
+
+variable "ssl_forced" {
+  default     = true
+  description = "Force SSL on Domains"
+}
+
+variable "google_email_enabled" {
+  default     = true
+  description = "Enable Google MX Records"
+}
