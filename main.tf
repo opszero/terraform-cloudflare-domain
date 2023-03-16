@@ -30,7 +30,7 @@ resource "cloudflare_record" "ses" {
 
 resource "aws_ses_domain_dkim" "dkim" {
   count  = var.aws_ses_enabled ? 1 : 0
-  domain = aws_ses_domain_identity.ses.domain
+  domain = aws_ses_domain_identity.ses[0].domain
 }
 
 resource "cloudflare_record" "dkim" {
