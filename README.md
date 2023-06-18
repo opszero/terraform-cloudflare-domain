@@ -14,6 +14,18 @@ Includes:
 ## Usage
 
 ```bash
+terraform {
+  required_providers {
+    cloudflare = {
+      source = "cloudflare/cloudflare"
+    }
+  }
+}
+
+provider "cloudflare" {
+  api_token = "<cf_api_token"
+}
+
 locals {
   subdomains = [
     {
