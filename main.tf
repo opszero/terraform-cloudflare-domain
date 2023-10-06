@@ -45,12 +45,13 @@ resource "cloudflare_record" "dkim" {
 resource "cloudflare_record" "records" {
   count = length(var.records)
 
-  zone_id = cloudflare_zone.site.id
-  name    = var.records[count.index].name
-  value   = var.records[count.index].value
-  type    = var.records[count.index].type
-  proxied = var.records[count.index].proxied
-  ttl     = 1
+  zone_id  = cloudflare_zone.site.id
+  name     = var.records[count.index].name
+  value    = var.records[count.index].value
+  type     = var.records[count.index].type
+  proxied  = var.records[count.index].proxied
+  priority = lookup(var.records[count.index], "priority", null)
+  ttl      = 1
 }
 
 resource "cloudflare_page_rule" "ssl" {
