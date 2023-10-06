@@ -49,9 +49,9 @@ resource "cloudflare_record" "records" {
   name     = var.records[count.index].name
   value    = var.records[count.index].value
   type     = var.records[count.index].type
-  proxied  = var.records[count.index].proxied
+  proxied  = lookup(var.records[count.index], "proxied", false)
   priority = lookup(var.records[count.index], "priority", null)
-  ttl      = 1
+  ttl      = lookup(var.records[count.index], "ttl", 1)
 }
 
 resource "cloudflare_page_rule" "ssl" {
